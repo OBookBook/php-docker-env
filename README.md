@@ -30,7 +30,6 @@ docker-compose up -d
 ```
 
 ### Webサーバが正常に動いているか確認
-これは私のプロジェクトのindex.phpファイルのトップページです。
 ![](https://storage.googleapis.com/zenn-user-upload/73bd365d50f6-20231029.png)
 2. 以下のURLでアクセスできます：[http://localhost:9080/](http://localhost:9080/)
 
@@ -60,7 +59,7 @@ composer install
 7. VSCodeでデバッグ実行
 ![](https://storage.googleapis.com/zenn-user-upload/a4a009797151-20231029.png)
 Xdebugを活用するために、以下の手順を実行してください：
-1\. index.phpにブレイクポイントを貼る
-2\. VSCodeでデバッグ実行を押す
-3\. プラウザからindex.phpを叩く!!以下のURLでアクセスできます
+  1. index.phpにブレイクポイントを貼る
+  2. VSCodeでデバッグ実行を押す
+  3. プラウザからindex.phpを叩く!!
 以下のURLでアクセスできます：[http://localhost:9080/](http://localhost:9080/)
