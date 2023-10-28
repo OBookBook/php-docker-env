@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      # ルートユーザのパスワードを各自で設定してください
+      MYSQL_ROOT_PASSWORD: root_password_kimetene
+      # データベース名を各自で設定してください
+      MYSQL_DATABASE: db_local
+      # データベース接続ユーザ名を各自で設定してください
+      MYSQL_USER: db_user
+      # データベース接続パスワードを各自で設定してください
+      MYSQL_PASSWORD: db_password_kimetene
+  php:
+    build: ./
+    container_name: php
+    volumes:
+      - ./php.ini:/usr/local/etc/php/php.ini
+      - ./:/var/www/html
+    ports:
+      - 9080:80
+    depends_on:
+      - db
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 9090:80
